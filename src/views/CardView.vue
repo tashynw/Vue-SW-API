@@ -22,6 +22,11 @@ export default {
       this.specificFilm = this.filmsData.find((film) => film.title === decodeURI(cardId))
     }
   },
+  mounted: function () {
+    if (this.filmsData && this.filmsData.length > 0) {
+      this.getSpecificFilm()
+    }
+  },
   watch: {
     filmsData: function (oldVal, newVal) {
       if (this.filmsData) {
