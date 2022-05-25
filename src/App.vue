@@ -1,30 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <h1 class="title-text">Vue.js API Practice</h1>
+  <router-view :filmsData="filmsData"/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import axios from 'axios'
+export default {
+  name: 'App',
+  data: function () {
+    return {
+      filmsData: {}
+    }
+  },
+  methods: {
+    loadFilms: function () {
+      axios.get('https://swapi.dev/api/films/')
+        .then((response) => {
+          this.filmsData = response.data.results
+        })
+    }
+  },
+  mounted: function () {
+    this.loadFilms()
+  }
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>

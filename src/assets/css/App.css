@@ -1,0 +1,13 @@
+body{
+    background: #e9edf0;
+}
+#app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title-text{
+    font-family: 'Open Sans';
+    font-size: 30px;
+    margin-bottom: 3%;
+}

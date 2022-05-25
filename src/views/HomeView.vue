@@ -1,18 +1,16 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div v-if="filmsData">
+    <div class="all-cards-box">
+      <div class="card-box" v-for="(film, i) in filmsData" :key="i">
+        <router-link :to="`/${film.title}`" style="text-decoration: none; color: inherit"><p class="card-name">{{ film.title }}</p></router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  props: ['filmsData']
 }
 </script>

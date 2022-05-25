@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.all-cards-box{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    gap: 20px;
+}
+
+.card-box{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: #40464a;
+    width: 100px;
+}
+
+.card-name{
+    color: #e9edf0;
+    font-family: 'Open Sans';
+    font-size: 20px;
+}

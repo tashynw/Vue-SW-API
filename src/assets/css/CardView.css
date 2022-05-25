@@ -1,0 +1,13 @@
+.card-box-individual{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #40464a;
+    min-width: 200px;
+}
+.card-name-individual{
+    color: #e9edf0;
+    font-family: 'Open Sans';
+    font-size: 20px;
+}
